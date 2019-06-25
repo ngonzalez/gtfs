@@ -72,6 +72,10 @@ module GTFS
       define_method "each_#{entity.singular_name}".to_sym do |&block|
         entity.each(File.join(@tmp_dir, entity.filename)) { |model| block.call model }
       end
+
+      define_method "#{entity.name}_count".to_sym do |&block|
+        count = File.foreach(File.join(@tmp_dir, entity.filename)).inject(-1) {|c, _| c+1}
+      end
     end
 
     def files

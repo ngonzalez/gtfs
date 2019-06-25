@@ -59,6 +59,16 @@ describe GTFS::Source do
     end
   end
 
+  describe '#agencies_count' do
+    subject {source.agencies_count}
+
+    context 'when the source has agencies' do
+      let(:source) {GTFS::Source.build(valid_local_source)}
+
+      it {should eq 1}
+    end
+  end
+
   describe '#stops' do
   end
 
