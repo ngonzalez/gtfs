@@ -74,7 +74,7 @@ module GTFS
         unprefixed_attr_hash = {}
 
         attr_hash.each do |key, val|
-          unprefixed_attr_hash[key.gsub(/^#{prefix}/, '')] = val
+          unprefixed_attr_hash[key.gsub(/^#{prefix}/, '').gsub(/[^a-zA-Z_]/, '')] = val
         end
 
         model = self.new(unprefixed_attr_hash)
