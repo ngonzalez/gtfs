@@ -27,6 +27,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'ruby-debug19'
   gem.add_development_dependency 'vcr', ['~> 3.0.3']
   gem.add_development_dependency 'webmock', ['~> 3.5.0']
+  gem.add_development_dependency 'rubyzip', ['~> 1.3.0']
 
   gem.files = `git ls-files`.split("\n")
   gem.test_files = `git ls-files -- {test,spec,features}/*`.split("\n")
